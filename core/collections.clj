@@ -22,8 +22,8 @@
     [(m true) (m false)]))
 
 (defn map-neighbors
-  "Applies predicate to every pair of neighbors in collection, returning the results."
-  [pred coll]
-  (for [i (range (dec (count coll)))]
-    (pred (nth coll i)
-          (nth coll (inc i)))))
+  "Applies predicate to every pair of neighbors in the sequence, returning a lazy sequence of the results."
+  [pred s]
+  (map-indexed
+   #(pred (nth s %1) %2)
+   (rest s)))
