@@ -1,5 +1,7 @@
 (ns com.burleyarch.bash)
 
+;; (require '[com.burleyarch.bash :as bash])
+
 (defmacro <
   "Evaluate body with *in* bound to file"
   [p & body]
