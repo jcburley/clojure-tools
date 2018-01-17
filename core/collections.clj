@@ -20,10 +20,3 @@
   [pred coll]
   (let [m (group-by pred coll)]
     [(m true) (m false)]))
-
-(defn map-neighbors
-  "Applies predicate to every pair of neighbors in the sequence, returning a lazy sequence of the results."
-  [pred s]
-  (map-indexed
-   #(pred (nth s %1) %2)
-   (rest s)))
